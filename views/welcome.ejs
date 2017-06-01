@@ -1,0 +1,22 @@
+<%- include('./partials/head', {title: 'Главная страница' }) %>
+<div class="container">
+  <h2>Информация о канале:</h2>
+  <br />
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <form method="POST" action="/">
+        <div class="form-group">
+          <input
+            class="form-control"
+            id="searchChannel"
+            type="text"
+            name="url"
+            value="https://www.youtube.com/channel/UCsAw3WynQJMm7tMy093y37A"
+          >
+        </div>
+        <input type="submit" value="Поиск" class="btn btn-default">
+      </form>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer %>

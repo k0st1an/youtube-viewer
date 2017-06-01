@@ -1,0 +1,85 @@
+<%- include('../partials/head', title) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-2">
+      <div class="text-center">
+        <img src="<%= picture %>" class="img-responsive img-thumbnail">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-10">
+      <h2>
+        <a href="https://www.youtube.com/channel/<%= id %>">
+          <%= title %>
+        </a>
+      </h2>
+      <div>
+        На YouTube начиная с <%= publishedAt %>
+      </div>
+    </div>
+  </div>
+  <% if (description) { %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <blockquote>
+          <p><%= description %></p>
+        </blockquote>
+      </div>
+    </div>
+  <% } %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div class="text-uppercase">
+        подписчиков
+      </div>
+      <div>
+        <%= subscriberCount %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div class="text-uppercase">
+        видео
+      </div>
+      <div>
+        <%= videoCount %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div class="text-uppercase">
+        просмотров
+      </div>
+      <div>
+        <%= viewCount %>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <% if (videoItems) { %>
+      <% videoItems.forEach(video => { %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="thumbnail">
+            <img src="<%= video.picture %>" alt="<%= video.title %>">
+            <div class="caption">
+              <a href="<%= video.url %>">
+                <h4 title="<%= video.title %>"><%= video.title %></h4>
+              </a>
+              <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= video.published %></p>
+              <div style="display: flex; justify-content: space-between;">
+                <div><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%= video.viewCount %></div>
+                <div><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <%= video.likeCount %></div>
+                <div><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> <%= video.dislikeCount %></div>
+                <div><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <%= video.commentCount %></div>
+              </div >
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+  <div class="container">
+    <div class="text-center">
+      <a class="btn btn-default" href="#" role="button">Более старые видео</a>
+    </div>
+  </div>
+</div>
+<% include ../partials/footer %>
