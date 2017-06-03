@@ -7,6 +7,13 @@
     "dev": "DEBUG=youtube-viewer:* nodemon npm start ENV=development",
     "prod": "npm star ENV=production"
   },
+  "engines": {
+    "node": "8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k0st1an/youtube-viewer"
+  },
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
