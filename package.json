@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "babel ./ --ignore node_modules,build -D -d build",
     "start": "node build/bin/www.js",
-    "dev": "DEBUG=youtube-viewer:* nodemon npm start ENV=development",
+    "dev": "DEBUG=youtube-viewer:* nodemon npm start ENV=development"
   },
   "engines": {
     "node": "8.0.0"
