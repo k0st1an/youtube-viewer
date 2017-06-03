@@ -1,21 +1,17 @@
 import express from 'express';
 import { replace } from 'ramda';
 import { WELCOME, CHANNEL_PAGE } from './urls';
+import { recieveChannel } from '../helpers';
 
 const router = express.Router();
 
 const Welcome = router
   .get(WELCOME, (req, res) => res.render('welcome'))
   .post(WELCOME, (req, res) => {
-    const re = /([\w-]+){8,}/g;
+    const { url } = req.body;
+    const id = recieveChannel(url);
 
-    try {
-      const id = re.exec(req.body.url)[0];
-
-      res.redirect(replace(':id', id, CHANNEL_PAGE));
-    } catch (error) {
-      res.render('error', { massage: 'Что-то пошло не так :(', error });
-    }
+    res.redirect(replace(':id', id, CHANNEL_PAGE));
   });
 
 export default Welcome;

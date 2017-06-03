@@ -1,4 +1,9 @@
 
+import recieveChannel from './channel';
+
 const youTubeAPIKey = process.env.YOUTUBE_KEY;
 
-export default youTubeAPIKey;
+export {
+  youTubeAPIKey,
+  recieveChannel,
+};
