@@ -1,20 +1,15 @@
 # YouTube Viewer
 
-## API key (Data API)
+## API key
 
-Create file `./api.json`:
+Create API key for `Data API` https://console.developers.google.com/.
 
-```json
-{
-  "youTubeAPIKey": "XXX"
-}
-```
-
-# Run
+## Run
 
 ```
+$ export YOUTUBE_KEY='XXX'
 $ npm i
-$ npm run dev
+$ npm start
 ```
 
 And go to `http://localhost:3000`.
