@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/babel-node ./bin/www",
+    "prestart": "babel ./ --ignore node_modules,build -D -d build",
+    "start": "node build/bin/www.js",
     "dev": "DEBUG=youtube-viewer:* nodemon npm start ENV=development",
-    "prod": "npm star ENV=production"
   },
   "engines": {
     "node": "8.0.0"
@@ -23,6 +23,7 @@
     "helmet": "^3.5.0",
     "morgan": "~1.8.1",
     "ramda": "^0.23.0",
+    "request": "^2.81.0",
     "request-promise": "^4.2.1",
     "serve-favicon": "~2.4.2"
   },
